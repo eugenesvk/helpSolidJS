@@ -2,6 +2,7 @@
 import { render }	from 'solid-js/web';
 import Nested    	from "./nested";
 import Counter   	from "./signal";
+import FibCounter	from "./memo";
 
 // import './index.css';
 // import App from './App';
@@ -26,6 +27,7 @@ function HelloWorld() {
       {nested}
     </div>
     <Counter />
+    <FibCounter />
     {svg}
     </>)
 }
