@@ -1,0 +1,38 @@
+{
+  // "transpileOnly": true,
+  "experimentalResolver"	: true,
+  "esm"                 	: true,
+  "module"              	: "NodeNext",
+  "compilerOptions": {
+    "baseUrl"                         	: ".",  // awaiting fix github.com/vitejs/vite/issues/2825
+    "target"                          	: "ESNext",
+    "module"                          	: "ESNext",
+    "moduleResolution"                	: "nodenext",
+    "allowSyntheticDefaultImports"    	: true,
+    "lib"                             	: ["DOM", "ESNext"],
+    "strict"                          	: true,
+    "esModuleInterop"                 	: true,
+    "incremental"                     	: false,
+    "skipLibCheck"                    	: true,
+    "jsx"                             	: "preserve",
+    "jsxImportSource"                 	: "solid-js",
+    "resolveJsonModule"               	: true,
+    "noUnusedLocals"                  	: true,
+    "forceConsistentCasingInFileNames"	: true,
+    "types"                           	: ["vite/client","unplugin-icons/types/solid",],
+    "noEmit"                          	: true,
+    "isolatedModules"                 	: true,
+    "paths"                           	: {
+      "~/*": ["src/*"]
+    }
+  },
+  "ts-node": {
+    "transpileOnly"  	: true	, // faster to skip typechecking
+    // "esm"         	: true	, // tell ts-node CLI to install the --loader automatically
+    "compilerOptions"	: {
+      // "module"    	: "ESNext" , // breaks with yarn PNP github.com/yarnpkg/berry/discussions/4044
+      "module"       	: "CommonJS"
+    }                	,
+  },
+  "exclude": ["dist", "node_modules"]
+}
