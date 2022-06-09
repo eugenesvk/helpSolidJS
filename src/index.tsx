@@ -26,7 +26,7 @@ function HelloWorld() {
       Hello1 {name}!
       {nested}
     </div>
-    <Counter />
+    <counter /> lower case name in JSX means a builtin component, UPPER start case means a Component
     <FibCounter />
     {svg}
     </>)
