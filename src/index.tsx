@@ -33,9 +33,8 @@ function HelloWorld() {
     Sorry but this browser does not support inline SVG.
     </svg>)
   const nested =(<Nested />) // Components are just functions like the HelloWorld() one we've been using so far. What makes them special is that they typically return JSX and can be called by JSX in other components. When the parent component first renders, it will execute the Nested() function and won't call it ever again. All updates are applied by Solid’s reactivity system which we will cover in the next couple of lessons.
-  return (<>
-    <div>
-      Hello1 {name}!
+  const old =
+  ` <div>
       {nested}
     <BindingClassList />
     <BindingStyle />
@@ -53,6 +52,11 @@ function HelloWorld() {
     <counter /> lower case name in JSX means a builtin component, UPPER start case means a Component
     <FibCounter />
     {svg}
+  `
+  return (<>
+    <div>
+      Hello1 {name}!
+    </div>
     </>)
 }
 
