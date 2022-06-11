@@ -29,6 +29,7 @@ import StoreContext            	from "./StoreContext";
 import { CounterProvider }     	from "./StoreContext-counter";
 import StoreImmutable          	from "./StoreImmutable";
 import StoreNoContext          	from "./StoreNoContext";
+import ReactivityBatching      	from "./ReactivityBatching";
 
 // import './index.css';
 // import App from './App';
@@ -54,6 +55,7 @@ function HelloWorld() {
     <div>
     <CounterProvider count={1}> <StoreContext /> </CounterProvider>
     </div>
+    <StoreNoContext />
     <StoreImmutable />
     <StoreMutate />
     <StoreCreate />
@@ -83,7 +85,7 @@ function HelloWorld() {
     {svg}
   `
   return (<>
-    <StoreNoContext />
+    <ReactivityBatching />
     </>)
 }
 
